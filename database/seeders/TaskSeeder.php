@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use DB;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Task;
 
 class TaskSeeder extends Seeder
 {
@@ -13,12 +12,16 @@ class TaskSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table(table: "tasks")->insert(values: [
-            [
-                "titulo" => "adeu",
-                "descripcion" => "prueba 2",
-                "completed" => true
-            ]
+        Task::create(attributes: [
+            "titulo" => "adeu",
+            "descripcion" => "prueba 2",
+            "completed" => true,
+        ]);
+
+        Task::create(attributes: [
+            "titulo" => "Hola",
+            "descripcion" => "prueba 5",
+            "completed" => false,
         ]);
     }
 }

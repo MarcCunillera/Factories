@@ -9,11 +9,13 @@
 
     <ul>
         @foreach ($tasks as $task)
-            <li>
-                <strong>{{ $task->titulo }}</strong><br>
-                {{ $task->descripcion }}<br>
-                Estado: {{ $task->completed ? 'Completada' : 'Pendiente' }}
-            </li>
+            <p>
+                <strong>Título:</strong> {{ $task->titulo }} <br>
+                <strong>Descripción:</strong> {{ $task->descripcion }} <br>
+                <strong>Completada:</strong> {{ $task->completed ? 'Completada' : 'Pendent' }} <br>
+                <strong>ID:</strong> {{ $task->id }}
+            </p>
+            <hr>
         @endforeach
     </ul>
 </body>
